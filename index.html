@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madyson</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        
+        <div class="sectors">Sectors, current: {{ choosed.sector }}</div>
+        <select v-model="selectedSector">
+            <option disabled value=""></option>
+            <option v-for="sector in sectors" v-bind:value="sector">
+                {{ sector.name }}
+            </option>
+        </select>
+        
+        <div class="categories">Categories, current: {{ choosed.category }}</div>
+        <select v-model="selectedCategory">
+            <option disabled value=""></option>
+            <option v-for="category in filteredCategories" v-bind:value="category">
+                {{ category.about }}
+            </option>
+        </select>
+        
+        <div class="lines">Lines, current: {{ choosed.line }}</div>
+        <select v-model="selectedLine">
+            <option disabled value=""></option>
+            <option v-for="line in filteredLines" v-bind:value="line">
+                {{ line.name }}
+            </option>
+        </select>
+        
+        <div class="seats">Seats, current: {{ choosed.seat }}</div>
+        <select v-model="selectedSeat">
+            <option disabled value=""></option>
+            <option v-for="seat in filteredSeats" v-if="seat.status == 0" v-bind:value="seat">
+                {{ seat.seat }}
+            </option>
+        </select>
+        
+        <button class="saveticket" :class="classSaveTicket" @click="saveTicket">Сохранить</button>
+        
+    </div>
+    
+    <script src="public/js/bundle.js"></script>
+</body>
+</html>

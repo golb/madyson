@@ -1,0 +1,64 @@
+//***********************************************************************************************
+//                                               VARIABLES
+//***********************************************************************************************
+
+$yellow: #ffdb0a;
+$green: #00E700;
+$red: #FF006F;
+$blue: #0193ff;
+$grey: #F9FBFB;
+
+
+//***********************************************************************************************
+//                                               STYLES
+//***********************************************************************************************
+
+body {
+    background: $grey;
+}
+
+.app {
+    margin: 0 auto;
+    width: 1200px;
+    padding: 40px 0;
+}
+
+select {
+    margin: 20px 10px;
+    width: 80%;
+    height: 29px;
+    line-height: 29px;
+    font-size: 14px;
+    background: #fff;
+    padding: 10px;
+    -webkit-appearance: menulist-button;
+}
+
+div {
+    padding: 0 10px 0 10px;
+}
+
+.saveticket {
+    display: block;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    padding: 10px 15px;
+    margin: 20px 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    &:hover {
+        background: $red;
+        border-color: $red;
+        color: #fff;
+    }
+    &.unblocked {
+        cursor: pointer;
+        &:hover {
+            background: $green;
+            border-color: $green;
+            color: #fff;
+        }
+    }
+}
